@@ -1,20 +1,20 @@
-# ³¯«~³® Ally
-## «äºû°V½mÃD¦^µª
-¤°»ò¬OClass
-* Class¤º¦³¸ÓÃş§OªºÄİ©Ê©M¤èªk¡C
-¤°»ò¬OConstructor
-* ¨Ï¥Înew©I¥s«Ø¥ßª«¥ó¡C
-¤°»ò¬ODestructor
-* §R±¼©Ò«Ø¥ßªºª«¥ó¡AÄÀ©ñ°O¾ĞÅéªÅ¶¡¡C
-¤°»ò¬OInterface
-* Ãş¦üclass¡A¦ıµLªkªì©l¤Æ(new)¡A¥u¯à¥Î¨ÓÄ~©Ó¡C
-¤°»ò¬OPolymorphism §Ú¦b­ş¨Ï¥Î¤FPolymorphism
+# é™³å“é™µ Ally
+## æ€ç¶­è¨“ç·´é¡Œå›ç­”
+ä»€éº¼æ˜¯Class
+* Classå…§æœ‰è©²é¡åˆ¥çš„å±¬æ€§å’Œæ–¹æ³•ã€‚
+ä»€éº¼æ˜¯Constructor
+* ä½¿ç”¨newå‘¼å«å»ºç«‹ç‰©ä»¶ã€‚
+ä»€éº¼æ˜¯Destructor
+* åˆªæ‰æ‰€å»ºç«‹çš„ç‰©ä»¶ï¼Œé‡‹æ”¾è¨˜æ†¶é«”ç©ºé–“ã€‚
+ä»€éº¼æ˜¯Interface
+* é¡ä¼¼classï¼Œä½†ç„¡æ³•åˆå§‹åŒ–(new)ï¼Œåªèƒ½ç”¨ä¾†ç¹¼æ‰¿ã€‚
+ä»€éº¼æ˜¯Polymorphism æˆ‘åœ¨å“ªä½¿ç”¨äº†Polymorphism
 * N
-[¤°»ò¬Otemplate](https://github.com/bachelorwhc/PlanetEditor/blob/master/creature.h#L20)
+[ä»€éº¼æ˜¯template](https://github.com/bachelorwhc/PlanetEditor/blob/master/creature.h#L20)
 * N
-[`Planet::Planet(const Planet & src)`±N·|²£¥Í¤°»ò°İÃD](https://github.com/bachelorwhc/PlanetEditor/blob/master/planet.cpp#L7)
+[`Planet::Planet(const Planet & src)`å°‡æœƒç”¢ç”Ÿä»€éº¼å•é¡Œ](https://github.com/bachelorwhc/PlanetEditor/blob/master/planet.cpp#L7)
 * N
-`std::shared_ptr`¬O¤°»ò
+`std::shared_ptr`æ˜¯ä»€éº¼
 * N
-¦pªG§Ñ°OÄÀ©ñ°O¾ĞÅé·|µo¥Í¤°»ò¨Æ C#·|µo¥Í¬Û¦Pªº¨Æ¶Ü
+å¦‚æœå¿˜è¨˜é‡‹æ”¾è¨˜æ†¶é«”æœƒç™¼ç”Ÿä»€éº¼äº‹ C#æœƒç™¼ç”Ÿç›¸åŒçš„äº‹å—
 * N
