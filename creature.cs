@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace AllyPlanet
 {
+   
+    // is a model that about detail of Object's information 
     public class CreatureType
     {
         public virtual void move() { }
@@ -15,25 +17,26 @@ namespace AllyPlanet
         public virtual int birth() { return 0; }
     }
 
-    //public class creature : myObject
-    //{
-    //    private int _amount = 0;
-    //    private object _p_implement = null;
+    public class creature<T>: myObject
+    {
+        private int _amount = 0;
+        private T _p_implement;
 
-    //    public creature(creature src) : base(src.getName())
-    //    {
-    //        _amount = src._amount;
-    //        _p_implement = src._p_implement;
-    //    }
+        public creature(creature<T> src) : base(src.getName())
+        {
+            _amount = src._amount;
+            _p_implement = src._p_implement;
+        }
 
-    //    public creature(string name) : base(name)
-    //    {
-    //        _p_implement = new object();
-    //    }
+        public creature(string name) : base(name)
+        {
+            Console.WriteLine("my name is : " + name);
+        }
 
-    //    public virtual void update()
-    //    {
-    //        _p_implement 
-    //    }
-    //}
+        public override void update()
+        {
+            //string typeAlly =  _p_implement.ToString();
+            //Console.WriteLine("typeAlly" + typeAlly);
+        }
+    }
 }
