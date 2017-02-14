@@ -8,9 +8,9 @@ namespace AllyPlanet
 {
     public class myObject
     {
-        private uint s_next_id = 0; // initial the ID of object
+        protected static uint s_next_id; // initial the ID of object
         private uint _ID;
-        private string _name;
+        protected string _name;
 
         public myObject() { }
         public uint getID() { return _ID; }
@@ -19,14 +19,14 @@ namespace AllyPlanet
 
         public myObject(string name)
         {
-            this._ID = s_next_id++;
-            this._name = name;
+            _ID = s_next_id++;
+            _name = name;
         }
 
         public myObject(myObject src)
         {
-            this._name = src._name;
-            this._ID = s_next_id++;
+            _name = src._name;
+            _ID = s_next_id++;
         }
         
     }

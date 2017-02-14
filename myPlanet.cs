@@ -12,22 +12,7 @@ namespace AllyPlanet
         private bool radiusCheck() { return _radius > 0.0f; } // check the radius
         private Coordinate _position; // the position of planet
         private List<myObject> _object_ptrs = new List<myObject>(); // the list of objects which are created 
-
-
-        //public myPlanet(myPlanet src) : base(src.getName())
-        //{
-        //    _object_ptrs = src._object_ptrs;
-        //    Console.WriteLine(" _object_ptrs != null");
-        //}
-
-        //public myPlanet(string name, float radius) : base(name)
-        //{
-        //    _position = new Coordinate();
-        //    _radius = radius;
-        //    if (!radiusCheck())
-        //        Console.WriteLine("Radius should be greater than 0.0f.");
-        //}
-
+                    
         // get the information of planet
         public myPlanet(string name, Coordinate position, float radius):base(name)
         {
@@ -53,27 +38,39 @@ namespace AllyPlanet
                 _object_ptrs.Add(ptr); // push back to the link
         }
 
-        //public void removeObject(uint id)
-        //{
-        //    foreach (myObject p in _object_ptrs)
-        //    {
-        //        if(id == p.getID())
-        //        {
-        //            _object_ptrs.Remove(p);
-        //            return;
-        //        }
-        //    }
-        //}
+        // remove the object
+        public void removeObject(uint id)
+        {
+            foreach (myObject p in _object_ptrs)
+            {
+                if (id == p.getID())
+                {
+                    _object_ptrs.Remove(p);
+                    return;
+                }
+            }
+        }
 
         // show the information of the planet
         public override void update()
         {
-                foreach (myObject p in _object_ptrs)
+            if(_object_ptrs.Count == 0)
+            {
+                Console.WriteLine("There is no object on the planet !!!");
+            }
+            else
+            {
+                foreach (CreatureType p in _object_ptrs)
                 {
                     Console.WriteLine(p.getID() + " " + p.getName());
-                    p.update();
+                    p.move();
+                    p.absorb();
+                    p.deadOrAlive();
+                    p.alive();
+                    p.birth();
                     Console.WriteLine("");
                 }
+            }          
         }
     }
 }

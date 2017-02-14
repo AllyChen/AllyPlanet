@@ -6,27 +6,6 @@ using System.Threading.Tasks;
 
 namespace AllyPlanet
 {
-
-    // detail of Lion's information 
-    public class Lion : CreatureType
-    {
-        public void move() { Console.WriteLine("Run Run Run"); }
-        public void absorb() { Console.WriteLine("Eat Eat Eat"); }
-        public int deadOrAlive() { Console.WriteLine("Alive"); return 0; }
-        public bool alive() { return true; }
-        public int birth() { return 0; }
-    }
-
-    // detail of Plant's information 
-    public class Plant : CreatureType
-    {
-        public void move() { Console.WriteLine("Plant cannot move :("); }
-        public void absorb() { Console.WriteLine("Growth"); }
-        public int deadOrAlive() { Console.WriteLine("Alive"); return 0; }
-        public bool alive() { return true; }
-        public int birth() { Console.WriteLine("Spread seeds"); return 0; }
-    }
-
     class Program
     {
         static void Main()
@@ -54,6 +33,7 @@ namespace AllyPlanet
                         // create planet
                         p_planet = new myPlanet(name, pos, r);
                         Console.WriteLine(p_planet.getName() + " created!");
+                        Console.WriteLine(" ");
                     }
                     catch (Exception e)
                     {
@@ -83,13 +63,15 @@ namespace AllyPlanet
                     }
                     else
                     {
-                        if (c_type == "Lion") // create Lion
+                        if (c_type == "Lion")
                         {
-                            op = new creature<Lion>(name); // create Lion
+                            op = new Lion(name); // create Lion
+                            Console.WriteLine("my name is : " + name);
                         }
-                        else if (c_type == "Plant") // create Plant
+                        else if (c_type == "Plant")
                         {
-                            op = new creature<Plant>(name); // create Plant
+                            op = new Plant(name); // create Plant
+                            Console.WriteLine("my name is : " + name);
                         }
                         else
                         {
@@ -98,13 +80,27 @@ namespace AllyPlanet
                         }
                         p_planet.addObject(op); // add object
                         Console.WriteLine(op.getName()+" added!");
+                        Console.WriteLine(" ");
                     }
 
                 }
                 // remove object on the planet
                 else if (command == "ro")
                 {
-
+                    uint id;
+                    // read the imformation of object
+                    id = uint.Parse(Console.ReadLine());
+                    if (p_planet == null) // if there is no planet, it can't create object
+                    {
+                        Console.WriteLine("Please create planet first.");
+                        continue;
+                    }
+                    else
+                    {
+                        p_planet.removeObject(id); // remove object
+                        Console.WriteLine(id + " removed!");
+                        Console.WriteLine(" ");
+                    }
                 }
                 // update
                 else if (command == "up")
